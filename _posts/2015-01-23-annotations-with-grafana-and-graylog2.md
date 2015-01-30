@@ -3,11 +3,12 @@ layout: post
 title: Using Graylog2 messages as annotations in Grafana
 ---
 
-A central logging infrastructure like Graylog2 or Logstash is something that should't be missed in modern data centres. 
-The same is true for aggregation and graphing of your infrastructure, application and bussines metrics. 
+A central logging infrastructure like Graylog2 or Logstash is something that shouldn't be missed in modern data centres. 
+The same is true for aggregation and graphing of your infrastructure, application and business metrics. 
 
 A central point for collecting those metrics can be done with tools like Graphite, OpenTSDB, or InfluxDB.  
 
+![Graph showing a dropped metric an two annotations](/public/img/grafana_annotation_demo.png)
 
 But the real [#monitoinglove](https://twitter.com/hashtag/monitoringlove) comes in place when you combine metrics and events into a single graph. 
 Imagine the following scenario: You discovers an anomaly in your metrics and start digging into it.
@@ -46,13 +47,14 @@ elasticsearch: {
 
 ![Add annotation with specific settings for Graylog2 query](/public/img/grafana_annotations.png)
 * Use the information from the Graylog2 message 
-* Use a wild card for the index name, as elasticsearch populates the indices with a prefix
+* Use a wild card for the index name, as elasticsearch populates the indexes with a prefix
 * Replace the server name with a variable, if you're using [templated dashboards](http://grafana.org/docs/features/templated_dashboards/). 
 
 Now your done and hopefully see annotation marker in your graph, like this:
 
 ![Memory usage graph with an annotation marker showing a sudo root session was started](/public/img/annotated_memory_graph.png)
 
+This is a very trivial example, but image to see your graphs annotated with log messages like: 
 * Changes done by your Configuration Management system, like Puppet, Cheft, Ansible etc. 
 * Code Commits, automatic software deployments, daemon restarts
 * Application specific events
@@ -60,7 +62,7 @@ Now your done and hopefully see annotation marker in your graph, like this:
 
 ## Troubleshooting 
 
-The best way to troubleshoot this to watch Chome Inspect or Firebug, while turning on and off the displaying of this annotation. 
+The best way to troubleshoot this to watch Chrome Inspect or Firebug, while turning on and off the displaying of this annotation. 
 There you find the HTTP POST request to ```http://elasitcsearch:9200/graylog2_*/_search```
 
 Please note that the annotations with Elasticsearch seam only to work (at least for me) if you're use a time range like "2 days ago". 
