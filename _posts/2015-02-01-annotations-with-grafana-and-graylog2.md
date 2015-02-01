@@ -68,9 +68,3 @@ In the Network tab you should see the HTTP POST requests to ```http://elasitcsea
 Please note that the annotations with Elasticsearch only seem to work (at least for me) if you're use a time range like "2 days ago". 
 If I drill into a graph or define an explicit time range, I've get an "Annotation error" resulting from a Elasticsearch API: ```ElasticsearchParseException[failed to parse date field [2015-01-29T01:42:29.330Z], tried both date format [yyyy-MM-dd HH:mm:ss.SSS], and timestamp number]```
  
-
-#monitoinglove, #graylog2, #grafana, #devops, #elasticsearch
-
-https://github.com/grafana/grafana/issues/201
-http://metabroadcast.com/blog/graph-all-the-things
-http://grafana.org/docs/features/annotations/
