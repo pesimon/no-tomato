@@ -25,7 +25,7 @@ Similar to the popular Elasticsearch/Logstash/Kibana ELK-Stack Graylog2 uses Ela
 * Browser needs to have access to the Elasticsearch API
 * The Elasticsearch API is configured as a data source in Grafana's ```config.js```
 
-```
+```javascript
 elasticsearch: {
     type: 'elasticsearch',
     url: "http://elasticsearch:9200",
@@ -55,6 +55,7 @@ Now your done and should see an annotation marker in your graph. I.e:
 ![Memory usage graph with an annotation marker showing a sudo root session was started](/public/img/annotated_memory_graph.png)
 
 This is a very trivial example, but image having your graphs annotated with log messages like: 
+
 * Changes done by your configuration management system, like Puppet, Cheft, Ansible etc. 
 * Code commits, automatic software deployments, daemon restarts
 * Application specific events
