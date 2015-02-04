@@ -16,5 +16,5 @@ Contact:
 * [Twitter](https://twitter.com/no_tomato_)
 
 
-Build with [Jekyll](http://jekyllrb.com) and [Hyde](http://hyde.getpoole.com)
+Built with [Jekyll](http://jekyllrb.com) and [Hyde](http://hyde.getpoole.com)
 
