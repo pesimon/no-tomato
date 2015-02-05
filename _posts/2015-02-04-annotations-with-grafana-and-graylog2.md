@@ -46,6 +46,7 @@ elasticsearch: {
 ## Add an annotation in Grafana 
 
 ![Add annotation with specific settings for Graylog2 query](/public/img/grafana_annotations.png)
+
 * Use the information from the Graylog2 message 
 * Use a wild card for the index name, as Elasticsearch populates the indexes with a prefix
 * Replace the server name with a variable, if you're using [templated dashboards](http://grafana.org/docs/features/templated_dashboards/). 
